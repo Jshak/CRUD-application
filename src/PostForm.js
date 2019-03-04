@@ -27,19 +27,21 @@ class PostForm extends Component{
                 this.getTitle.value = '';
                 this.getMessage.value = '';
         }
-
+//  {/* So in here the form element now accepts an onSubmit event */}
+//             {/* Whenever this event takes place the handleSubmit function will execute */}
         render(){
         return(
-          <div>
-            <h1>Create Post</h1>
-            {/* So in here the form element now accepts an onSubmit event */}
-            {/* Whenever this event takes place the handleSubmit function will execute */}
-            <form onSubmit={this.handleSubmit}>
-                <input required type="text" ref={(input)=>this.getTitle = input} placeholder="Enter Post Title" /><br /><br />
-                <textarea required rows="5" cols="28" ref={(input)=>this.getMessage = input} placeholder="Enter Post" /><br /><br />
+           
+        <div className="post-container">
+            <h1 className="post_heading">Create Post</h1>
+            <form className="form" onSubmit={this.handleSubmit} >
+            <input required type="text" ref={(input) => this.getTitle = input}
+            placeholder="Enter Post Title" /><br /><br />
+            <textarea required rows="5" ref={(input) => this.getMessage = input}
+            cols="28" placeholder="Enter Post" /><br /><br />
                 <button>Post</button>
             </form>
-        </div>  
+        </div>
         );
     }
 } 
